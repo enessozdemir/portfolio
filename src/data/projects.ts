@@ -3,8 +3,8 @@ import { PersonalInfo, Project } from "@/types";
 export const personalInfo: PersonalInfo = {
   name: "Enes Özdemir",
   role: {
-    en: "Software Engineer",
-    tr: "Yazılım Mühendisi",
+    en: "",
+    tr: "",
   },
   tagline: {
     en: "Building resilient web applications and high-throughput systems with clean architecture.",
