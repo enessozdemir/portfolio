@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ProjectImage } from "@/types";
 import { Image as ImageIcon } from "lucide-react";
 
-const basePath = "/portfolio";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 interface ProjectGalleryProps {
   images?: ProjectImage[];
