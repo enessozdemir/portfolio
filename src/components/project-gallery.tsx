@@ -5,6 +5,8 @@ import Image from "next/image";
 import { ProjectImage } from "@/types";
 import { Image as ImageIcon } from "lucide-react";
 
+const basePath = "/portfolio";
+
 interface ProjectGalleryProps {
   images?: ProjectImage[];
   projectTitle: string;
@@ -22,7 +24,7 @@ export function ProjectGallery({ images = [], projectTitle }: ProjectGalleryProp
         {currentImage && !hasError ? (
           <div className="relative w-full">
             <Image
-              src={currentImage.src}
+              src={`${basePath}${currentImage.src}`}
               alt={currentImage.alt}
               width={2938}
               height={1580}

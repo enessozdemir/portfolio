@@ -95,3 +95,10 @@ npm run start
 ```bash
 npm run lint
 ```
+
+## Deploying to GitHub Pages
+
+This project exports a static site to `out/` and is configured for the repository URL `https://enessozdemir.github.io/portfolio/`.
+
+1. In the GitHub repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**.
+2. Push changes to `main`. The workflow in `.github/workflows/deploy.yml` builds the site and deploys the `out/` folder.

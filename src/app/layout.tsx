@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/language-provider";
 
+const basePath = "/portfolio";
+
 export const metadata: Metadata = {
   title: "Enes Özdemir",
   description: "Enes Özdemir",
@@ -40,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
-        <link rel="stylesheet" href="/output.css" />
+        <link rel="stylesheet" href={`${basePath}/output.css`} />
       </head>
       <body className="font-sans min-h-screen flex flex-col transition-colors duration-200">
         <ThemeProvider
