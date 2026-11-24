@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Software Engineer Portfolio Website
 
-## Getting Started
+A modern, minimalist, technically focused personal portfolio website built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js (App Router, Server & Client Components)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Theming:** `next-themes` (Dark & Light mode support with zero flash)
+- **Icons:** Lucide React & Custom Monochromatic Brand SVGs
+
+---
+
+## 🛠️ Project Structure
+
+```text
+portfolio/
+├── public/
+│   └── images/
+│       ├── project-one/          # Dedicated screenshots for Project 1
+│       │   ├── screenshot-1.svg
+│       │   ├── screenshot-2.svg
+│       │   └── screenshot-3.svg
+│       ├── project-two/          # Dedicated screenshots for Project 2
+│       │   ├── screenshot-1.svg
+│       │   └── screenshot-2.svg
+│       └── project-three/        # Dedicated screenshots for Project 3
+│           ├── screenshot-1.svg
+│           └── screenshot-2.svg
+├── src/
+│   ├── app/
+│   │   ├── globals.css           # Design tokens, neutral theme variables
+│   │   ├── layout.tsx            # SEO Metadata, OpenGraph, theme hydration
+│   │   └── page.tsx              # Single-page layout composition
+│   ├── components/
+│   │   ├── header.tsx            # Sticky minimal header, theme toggle, mobile drawer
+│   │   ├── hero.tsx              # Clean bio, engineering focus, CTAs & socials
+│   │   ├── projects.tsx          # Selected projects showcase section
+│   │   ├── project-card.tsx      # Alternating layout, tech badges, highlights
+│   │   ├── project-gallery.tsx   # Interactive screenshot gallery / carousel
+│   │   ├── contact.tsx           # Minimal inquiry links (Email, GitHub, LinkedIn)
+│   │   ├── footer.tsx            # Dynamic copyright year, top jump
+│   │   ├── social-icons.tsx      # Clean SVG brand icons
+│   │   ├── theme-provider.tsx    # Theme context wrapper
+│   │   └── theme-toggle.tsx      # Light/Dark switch button
+│   ├── data/
+│   │   └── projects.ts           # Centralized project & personal configuration
+│   └── types/
+│       └── index.ts              # Strict TypeScript definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 💻 Managing Projects and Images
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Centralized Data
+All personal details and project specifications are centralized in:
+`src/data/projects.ts`
 
-## Learn More
+To update your projects, modify the `projectsData` array:
+- `id`: Unique identifier matching the image folder.
+- `title`: Project title.
+- `tagline`: Concise technical subtitle.
+- `description`: Core technical breakdown.
+- `images`: Array of screenshot objects (`src`, `alt`, `caption`). Supports single or multiple images.
+- `technologies`: Array of stack badges.
+- `features`: Array of key technical engineering highlights.
+- `githubUrl`: Repository link.
+- `liveUrl`: Live deployment link.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Centralized Image Directory
+Screenshots are placed in dedicated folders under:
+`public/images/[project-id]/`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Reference the local path in `src/data/projects.ts` (e.g. `/images/project-one/screenshot-1.png`).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🏃 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Production Build
+```bash
+npm run build
+npm run start
+```
+
+### Linting & Typecheck
+```bash
+npm run lint
+```
